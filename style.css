@@ -1,0 +1,249 @@
+/* ===== BASE ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --green: #22c55e;
+  --green-dark: #16a34a;
+  --green-xdark: #14532d;
+  --dark: #0f172a;
+  --text: #334155;
+  --muted: #94a3b8;
+  --bg: #f8fafc;
+  --white: #ffffff;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  display: flex;
+  align-items: center;
+  padding: 60px 48px;
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  width: 100%;
+}
+
+.avatar {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--white);
+  box-shadow: 0 16px 48px rgba(34,197,94,0.2);
+  flex-shrink: 0;
+}
+
+.hero-text .label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.hero-text h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 900;
+  color: var(--dark);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.hero-sub {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 24px;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.badges span {
+  background: white;
+  border: 1.5px solid #bbf7d0;
+  color: var(--green-xdark);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.83rem;
+  font-weight: 600;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--green-dark);
+  color: white;
+  padding: 13px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  box-shadow: 0 4px 20px rgba(22,163,74,0.3);
+}
+
+.btn-primary:hover {
+  background: var(--green-xdark);
+  transform: translateY(-2px);
+}
+
+/* ===== SECTIONS ===== */
+.section { padding: 90px 48px; }
+.section.dark { background: var(--dark); }
+.inner { max-width: 900px; margin: 0 auto; }
+
+.label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.label.green { color: var(--green); }
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 16px;
+}
+
+.section.dark h2 { color: white; }
+
+/* ===== ÉCOLE ===== */
+.school-logo {
+  height: 40px;
+  display: block;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.logo-fallback {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--green);
+  margin-bottom: 20px;
+}
+
+.school-desc {
+  color: var(--muted);
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.school-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.school-tags span {
+  background: rgba(34,197,94,0.12);
+  color: #86efac;
+  border: 1px solid rgba(34,197,94,0.25);
+  padding: 5px 16px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+/* ===== HOBBIES ===== */
+.hobbies {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.hobby {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.hobby:hover { transform: translateY(-4px); }
+
+.hobby.featured {
+  grid-row: span 2;
+  background: linear-gradient(145deg, #f0fdf4, #dcfce7);
+  border: 2px solid #bbf7d0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.icon { font-size: 2rem; display: block; margin-bottom: 8px; }
+.hobby h3 { font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+.hobby p { font-size: 0.87rem; color: var(--muted); }
+.hobby.featured p { font-size: 0.95rem; color: var(--text); }
+
+/* ===== CONTACT ===== */
+.contact-center { text-align: center; }
+.contact-sub { color: var(--muted); font-size: 0.95rem; margin-bottom: 36px; }
+
+.contact-btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn-ghost {
+  display: inline-block;
+  border: 2px solid rgba(255,255,255,0.2);
+  color: white;
+  padding: 11px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.2s;
+}
+
+.btn-ghost:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #0a0f1e;
+  color: #475569;
+  text-align: center;
+  padding: 24px;
+  font-size: 0.82rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 700px) {
+  .hero { padding: 80px 24px; }
+  .hero-inner { flex-direction: column; text-align: center; gap: 32px; }
+  .badges { justify-content: center; }
+  .avatar { width: 160px; height: 160px; }
+  .section { padding: 60px 24px; }
+  .hobbies { grid-template-columns: 1fr 1fr; }
+  .hobby.featured { grid-row: span 1; }
+}
